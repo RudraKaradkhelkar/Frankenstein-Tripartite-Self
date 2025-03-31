@@ -1,0 +1,11 @@
+document.querySelectorAll("nav ul li a").forEach(link => {
+  link.addEventListener("click", event => {
+    event.preventDefault();
+    const targetID = link.getAttribute("href").substring(1);
+    const targetSection = document.getElementById(targetID);
+    window.scrollTo({
+      top: targetSection.offsetTop,
+      behavior: "smooth"
+    });
+  });
+});
